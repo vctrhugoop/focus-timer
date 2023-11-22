@@ -1,0 +1,127 @@
+:root {
+  --bg-color: hsl(194, 5%, 7%);
+  --text-color: hsl(194, 40%, 98%);
+  --primary-color: hsla(194, 97%, 31%, 1);
+  --sounds-bg-color: hsla(194, 9%, 89%, 1);
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html.light {
+  --text-color: hsl(var(--hue), 5%, 7%);
+  --bg-color: hsl(var(--hue), 40%, 98%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+body,
+button {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+  border: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+#app .timer-wrapper,
+#app #sounds {
+  display: grid;
+  justify-items: center;
+}
+@media screen and (min-width: 1024px) {
+  #app {
+    flex-direction: row;
+    gap: 8rem;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 2rem;
+}
+footer p {
+  font-size: 1.4rem;
+}
+footer p a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.flex {
+  display: flex;
+}
+
+#toggle-mode {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+  font-size: 4.8rem;
+  background-color: transparent;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+#toggle-mode:hover {
+  color: var(--primary-color);
+}
+
+#timer {
+  font-size: 9.6rem;
+}
+
+#controls {
+  gap: 1.8rem;
+}
+#controls button {
+  background-color: transparent;
+  font-size: 4.8rem;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#controls button:hover {
+  color: var(--primary-color);
+}
+
+#sounds {
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+#sounds button {
+  font-size: 4rem;
+  border-radius: 1.4rem;
+  padding: 2rem;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transition: background 0.4s;
+  transition: color 0.4s;
+}
+#sounds button:not(.active) {
+  color: #323238;
+  background-color: var(--sounds-bg-color);
+}
+#sounds button:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}/*# sourceMappingURL=style.css.map */

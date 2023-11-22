@@ -1,6 +1,9 @@
-@use 'variables';
-
 :root {
+  --bg-color: hsl(194, 5%, 7%);
+  --text-color: hsl(194, 40%, 98%);
+  --primary-color: hsla(194, 97%, 31%, 1);
+  --sounds-bg-color: hsla(194, 9%, 89%, 1);
+
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
 
@@ -10,8 +13,18 @@
   box-sizing: border-box;
 }
 
+html.light {
+  --text-color: hsl(var(--hue), 5%, 7%);
+  --bg-color: hsl(var(--hue), 40%, 98%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
 body {
-  background-color: variables.$bg-color;
+  background-color: var(--bg-color);
   height: 100vh;
   display: grid;
   place-content: center;
@@ -20,7 +33,7 @@ body {
 body,
 button {
   font-family: 'Roboto', sans-serif;
-  color: variables.$text-color;
+  color: var(--text-color);
   border: none;
 }
 
@@ -53,7 +66,7 @@ footer {
     a {
       font-weight: bold;
       text-decoration: none;
-      color: variables.$primary-color;
+      color: var(--primary-color);
     }
   }
 }
