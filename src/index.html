@@ -19,7 +19,34 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <main class="app">
+      <button id="toggle-mode">
+        <span>enable/disable dark mode</span>
+        <i class="ph-bold ph-moon"></i>
+        <i class="ph-bold ph-sun"></i>
+      </button>
+      <div class="timer-wrapper">
+        <section id="timer">
+          <span id="minutes">00</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </section>
+        <section id="controls">
+          <button class="ph ph-play-circle"></button>
+          <button class="ph ph-stop-circle"></button>
+          <button class="ph ph-plus-circle"></button>
+          <button class="ph ph-minus-circle"></button>
+        </section>
+      </div>
+      <div class="sounds-wrapper">
+        <section id="sounds">
+          <button class="ph ph-tree"></button>
+          <button class="ph ph-cloud-rain"></button>
+          <button class="ph ph-coffee"></button>
+          <button class="ph ph-campfire"></button>
+        </section>
+      </div>
+    </main>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
