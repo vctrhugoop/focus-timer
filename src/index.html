@@ -19,19 +19,19 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
-    <main class="app">
+    <main id="app">
       <button id="toggle-mode">
         <span>enable/disable dark mode</span>
         <i class="ph-bold ph-moon"></i>
         <i class="ph-bold ph-sun"></i>
       </button>
       <div class="timer-wrapper">
-        <section id="timer">
+        <section id="timer" class="flex">
           <span id="minutes">00</span>
           <span>:</span>
           <span id="seconds">00</span>
         </section>
-        <section id="controls">
+        <section id="controls" class="flex">
           <button class="ph ph-play-circle"></button>
           <button class="ph ph-stop-circle"></button>
           <button class="ph ph-plus-circle"></button>
