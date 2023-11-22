@@ -21,7 +21,7 @@
   <body>
     <main id="app">
       <button id="toggle-mode">
-        <!-- <span>enable/disable dark mode</span> -->
+        <span class="screen-reader-only">enable/disable dark mode</span>
         <i class="ph-bold ph-moon"></i>
         <i class="ph-bold ph-sun"></i>
       </button>
@@ -32,18 +32,34 @@
           <span id="seconds">00</span>
         </section>
         <section id="controls" class="flex">
-          <button class="ph ph-play-circle"></button>
-          <button class="ph ph-stop-circle"></button>
-          <button class="ph ph-plus-circle"></button>
-          <button class="ph ph-minus-circle"></button>
+          <button class="ph ph-play-circle">
+            <span class="screen-reader-only">Start timer</span>
+          </button>
+          <button class="ph ph-stop-circle">
+            <span class="screen-reader-only">Stop timer</span>
+          </button>
+          <button class="ph ph-plus-circle">
+            <span class="screen-reader-only">Plus five minutes</span>
+          </button>
+          <button class="ph ph-minus-circle">
+            <span class="screen-reader-only">Minus five minutes</span>
+          </button>
         </section>
       </div>
 
       <section id="sounds">
-        <button class="ph ph-tree"></button>
-        <button class="ph ph-cloud-rain"></button>
-        <button class="ph ph-coffee"></button>
-        <button class="ph ph-campfire"></button>
+        <button class="ph ph-tree">
+          <span class="screen-reader-only">Sound florest</span>
+        </button>
+        <button class="ph ph-cloud-rain">
+          <span class="screen-reader-only">Sound rain</span>
+        </button>
+        <button class="ph ph-coffee">
+          <span class="screen-reader-only">Sound coffeeshop</span>
+        </button>
+        <button class="ph ph-campfire">
+          <span class="screen-reader-only">Sound fireplace</span>
+        </button>
       </section>
       <footer>
         <p>

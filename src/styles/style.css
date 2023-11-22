@@ -72,6 +72,19 @@ footer p a {
   display: flex;
 }
 
+.screen-reader-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 #toggle-mode {
   position: absolute;
   top: 3.2rem;
