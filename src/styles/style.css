@@ -96,14 +96,6 @@ html:not(.running) .ph-pause-circle {
   display: none;
 }
 
-.sound-florest .ph-tree,
-.sound-rain .ph-cloud-rain,
-.sound-coffee .ph-coffee,
-.sound-fireplace .ph-fireplace {
-  color: var(--sounds-text-color);
-  background-color: var(--primary-color);
-}
-
 #toggle-mode {
   position: absolute;
   top: 3.2rem;
@@ -138,13 +130,27 @@ html:not(.running) .ph-pause-circle {
   grid-template-columns: 1fr 1fr;
   gap: 3.2rem;
 }
-#sounds button {
+#sounds .ph-tree,
+#sounds .ph-cloud-rain,
+#sounds .ph-coffee,
+#sounds .ph-campfire {
   font-size: 4rem;
   border-radius: 1.4rem;
   padding: 2rem;
   background-color: var(--sounds-bg-color);
   cursor: pointer;
 }
-#sounds button:hover {
+#sounds .ph-tree:hover,
+#sounds .ph-cloud-rain:hover,
+#sounds .ph-coffee:hover,
+#sounds .ph-campfire:hover {
+  background-color: var(--primary-color);
+}
+
+.sound-florest #sounds .ph-tree,
+.sound-rain #sounds .ph-cloud-rain,
+.sound-coffee #sounds .ph-coffee,
+.sound-fireplace #sounds .ph-campfire {
+  color: var(--sounds-text-color);
   background-color: var(--primary-color);
 }/*# sourceMappingURL=style.css.map */

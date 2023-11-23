@@ -17,11 +17,3 @@ html.light #sounds button {
 html:not(.running) .ph-pause-circle {
   display: none;
 }
-
-.sound-florest .ph-tree,
-.sound-rain .ph-cloud-rain,
-.sound-coffee .ph-coffee,
-.sound-fireplace .ph-fireplace {
-  color: var(--sounds-text-color);
-  background-color: var(--primary-color);
-}

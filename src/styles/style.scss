@@ -43,7 +43,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 3.2rem;
 
-  button {
+  .ph-tree,
+  .ph-cloud-rain,
+  .ph-coffee,
+  .ph-campfire {
     font-size: 4rem;
     border-radius: 1.4rem;
     padding: 2rem;
@@ -55,4 +58,11 @@
       background-color: var(--primary-color);
     }
   }
+}
+.sound-florest #sounds .ph-tree,
+.sound-rain #sounds .ph-cloud-rain,
+.sound-coffee #sounds .ph-coffee,
+.sound-fireplace #sounds .ph-campfire {
+  color: var(--sounds-text-color);
+  background-color: var(--primary-color);
 }
