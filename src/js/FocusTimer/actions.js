@@ -1,5 +1,8 @@
 import state from './state.js';
 import * as sounds from './sounds.js';
+import * as elements from './elements.js';
+
+let currentSound = null;
 
 export function startStop() {
   state.isRunning = document.documentElement.classList.toggle('running');
@@ -11,65 +14,66 @@ export function stop() {
   sounds.buttonPress.play();
 }
 
-let currentSound = null;
+export function stopCurrentSound() {
+  if (currentSound) {
+    currentSound.pause();
+    currentSound.currentTime = 0;
+    console.log('oi');
+  }
+}
+
+export function setSoundState(target) {
+  stopCurrentSound();
+
+  const soundOptions = [
+    'sound-florest',
+    'sound-rain',
+    'sound-coffee',
+    'sound-fireplace',
+  ];
+
+  const isTargetActive = document.documentElement.classList.contains(target);
+
+  soundOptions.forEach(option => {
+    if (option === target) {
+      if (isTargetActive) {
+        state.isSound = document.documentElement.classList.remove(target);
+      } else {
+        state.isSound = document.documentElement.classList.add(target);
+      }
+    } else {
+      state.isSound = document.documentElement.classList.remove(option);
+    }
+  });
+
+  if (isTargetActive) {
+    currentSound = null;
+  } else {
+    if (target === 'sound-florest') {
+      currentSound = sounds.florest;
+      currentSound.play();
+    } else if (target === 'sound-rain') {
+      currentSound = sounds.rain;
+      currentSound.play();
+    } else if (target === 'sound-coffee') {
+      currentSound = sounds.coffeeShop;
+      currentSound.play();
+    } else if (target === 'sound-fireplace') {
+      currentSound = sounds.fireplace;
+      currentSound.play();
+    }
+  }
+}
 
 export function soundFlorest() {
-  document.querySelector('.btn-sound-florest').classList.toggle('active');
-
-  if (
-    (state.isSound = document.documentElement.classList.toggle('sound-active'))
-  ) {
-    if (currentSound == null) {
-      currentSound = sounds.florest;
-    } else {
-      console.log('não estou vazio');
-    }
-  } else {
-    currentSound.pause();
-  }
+  setSoundState('sound-florest');
 }
 export function soundRain() {
-  document.querySelector('.btn-sound-rain').classList.toggle('active');
-  if (
-    (state.isSound = document.documentElement.classList.toggle('sound-active'))
-  ) {
-    if (currentSound == null) {
-      currentSound = sounds.rain;
-      console.log(currentSound);
-    } else {
-      console.log('não estou vazio');
-    }
-  } else {
-    currentSound.pause();
-  }
+  setSoundState('sound-rain');
 }
 export function soundCoffeeShop() {
-  state.isSound = document
-    .querySelector('.btn-sound-coffee')
-    .classList.toggle('active');
-
-  if (
-    (state.isSound = document
-      .querySelector('.btn-sound-coffee')
-      .classList.contains('active'))
-  ) {
-    sounds.coffeeShop.play();
-  } else {
-    sounds.coffeeShop.pause();
-  }
+  setSoundState('sound-coffee');
 }
 export function soundFireplace() {
-  state.isSound = document
-    .querySelector('.btn-sound-fireplace')
-    .classList.toggle('active');
-
-  if (
-    (state.isSound = document
-      .querySelector('.btn-sound-fireplace')
-      .classList.contains('active'))
-  ) {
-    sounds.fireplace.play();
-  } else {
-    sounds.fireplace.pause();
-  }
+  setSoundState('sound-fireplace');
 }
