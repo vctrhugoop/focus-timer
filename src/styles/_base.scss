@@ -1,8 +1,10 @@
 :root {
   --bg-color: hsl(194, 5%, 7%);
   --text-color: hsl(194, 40%, 98%);
-  --primary-color: hsla(194, 97%, 31%, 1);
-  --sounds-bg-color: hsla(194, 9%, 89%, 1);
+  --primary-color: rgb(2, 156, 136);
+
+  --sounds-bg-color: hsl(180, 2%, 12%);
+  --sounds-text-color: hsl(194, 40%, 98%);
 
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
@@ -11,16 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html.light {
-  --text-color: hsl(var(--hue), 5%, 7%);
-  --bg-color: hsl(var(--hue), 40%, 98%);
-}
-
-html.light .ph-sun,
-html:not(.light) .ph-moon {
-  display: none;
 }
 
 body {
@@ -69,20 +61,4 @@ footer {
       color: var(--primary-color);
     }
   }
-}
-
-.flex {
-  display: flex;
-}
-
-.screen-reader-only {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  overflow: hidden;
-
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  appearance: none;
 }

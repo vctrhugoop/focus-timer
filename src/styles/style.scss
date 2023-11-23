@@ -1,4 +1,7 @@
 @use 'base';
+@use 'togglemode';
+@use 'screenReader';
+@use 'utils';
 
 #toggle-mode {
   position: absolute;
@@ -30,8 +33,6 @@
 
     cursor: pointer;
 
-    transition: color 0.2s;
-
     &:hover {
       color: var(--primary-color);
     }
@@ -46,21 +47,11 @@
     font-size: 4rem;
     border-radius: 1.4rem;
     padding: 2rem;
-    color: var(--white-color);
-    background-color: var(--primary-color);
+    background-color: var(--sounds-bg-color);
 
     cursor: pointer;
 
-    transition: background 0.4s;
-    transition: color 0.4s;
-
-    &:not(.active) {
-      color: #323238;
-      background-color: var(--sounds-bg-color);
-    }
-
     &:hover {
-      color: #fff;
       background-color: var(--primary-color);
     }
   }

@@ -1,8 +1,9 @@
 :root {
   --bg-color: hsl(194, 5%, 7%);
   --text-color: hsl(194, 40%, 98%);
-  --primary-color: hsla(194, 97%, 31%, 1);
-  --sounds-bg-color: hsla(194, 9%, 89%, 1);
+  --primary-color: rgb(2, 156, 136);
+  --sounds-bg-color: hsl(180, 2%, 12%);
+  --sounds-text-color: hsl(194, 40%, 98%);
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
 
@@ -10,16 +11,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html.light {
-  --text-color: hsl(var(--hue), 5%, 7%);
-  --bg-color: hsl(var(--hue), 40%, 98%);
-}
-
-html.light .ph-sun,
-html:not(.light) .ph-moon {
-  display: none;
 }
 
 body {
@@ -68,8 +59,10 @@ footer p a {
   color: var(--primary-color);
 }
 
-.flex {
-  display: flex;
+html.light {
+  --text-color: hsl(194, 5%, 7%);
+  --bg-color: hsl(194, 40%, 98%);
+  --sounds-bg-color: hsla(194, 9%, 89%, 1);
 }
 
 .screen-reader-only {
@@ -83,6 +76,32 @@ footer p a {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.flex {
+  display: flex;
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+html.light #sounds button:hover {
+  color: var(--sounds-text-color);
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
+
+.sound-florest .ph-tree,
+.sound-rain .ph-cloud-rain,
+.sound-coffee .ph-coffee,
+.sound-fireplace .ph-fireplace {
+  color: var(--sounds-text-color);
+  background-color: var(--primary-color);
 }
 
 #toggle-mode {
@@ -110,7 +129,6 @@ footer p a {
   font-size: 4.8rem;
   margin-top: 1.7rem;
   cursor: pointer;
-  transition: color 0.2s;
 }
 #controls button:hover {
   color: var(--primary-color);
@@ -124,17 +142,9 @@ footer p a {
   font-size: 4rem;
   border-radius: 1.4rem;
   padding: 2rem;
-  color: var(--white-color);
-  background-color: var(--primary-color);
-  cursor: pointer;
-  transition: background 0.4s;
-  transition: color 0.4s;
-}
-#sounds button:not(.active) {
-  color: #323238;
   background-color: var(--sounds-bg-color);
+  cursor: pointer;
 }
 #sounds button:hover {
-  color: #fff;
   background-color: var(--primary-color);
 }/*# sourceMappingURL=style.css.map */
