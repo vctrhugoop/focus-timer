@@ -15,6 +15,7 @@ export function reset() {
   state.isRunning = false;
   document.documentElement.classList.remove('running');
   timer.updateDisplay();
+  sounds.buttonPress.play();
 }
 
 export function moreFive() {
