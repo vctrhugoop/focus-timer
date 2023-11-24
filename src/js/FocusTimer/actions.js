@@ -1,16 +1,47 @@
 import state from './state.js';
 import * as sounds from './sounds.js';
 import * as elements from './elements.js';
+import * as timer from './timer.js';
 
 let currentSound = null;
 
 export function startStop() {
   state.isRunning = document.documentElement.classList.toggle('running');
   sounds.buttonPress.play();
+
+  timer.countDown();
 }
-export function stop() {
+export function reset() {
   state.isRunning = false;
   document.documentElement.classList.remove('running');
+  timer.updateDisplay();
+}
+
+export function moreFive() {
+  let minutes = Number(elements.minutes.textContent);
+  let seconds = Number(elements.seconds.textContent);
+
+  minutes += 5;
+
+  minutes = minutes > 60 ? 60 : minutes;
+
+  seconds = 0;
+
+  timer.updateDisplay(minutes);
+  sounds.buttonPress.play();
+}
+
+export function minusFive() {
+  let minutes = Number(elements.minutes.textContent);
+  minutes -= 5;
+
+  if (minutes < 0) {
+    reset();
+    sounds.kitchenTimer.play();
+    return;
+  }
+
+  timer.updateDisplay(minutes);
   sounds.buttonPress.play();
 }
 
@@ -18,7 +49,6 @@ export function stopCurrentSound() {
   if (currentSound) {
     currentSound.pause();
     currentSound.currentTime = 0;
-    console.log('oi');
   }
 }
 
