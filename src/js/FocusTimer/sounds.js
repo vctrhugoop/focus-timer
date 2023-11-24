@@ -1,5 +1,5 @@
 export const buttonPress = new Audio('./assets/button-press.wav');
-export const kitchenTimer = new Audio('./assets/kitchen-timer.wav');
+export const kitchenTimer = new Audio('./assets/kitchen-timer.mp3');
 export const florest = new Audio('./assets/florest.wav');
 export const rain = new Audio('./assets/rain.wav');
 export const coffeeShop = new Audio('./assets/coffee-shop.wav');
