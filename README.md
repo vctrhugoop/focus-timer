@@ -18,6 +18,15 @@
 <img src="/.github/preview.png">
 
 
+<br/>
+
+Projeto desenvolvido para o desafio do módulo 5 do curso [Explorer da Rocketseat](https://www.rocketseat.com.br/explorer), onde foi abortado assuntos como manipular o navegador utilizando a DOM, funções callbacks, recursividade, princípios do Clean Code, ES6 Modules, padrão Factory, injeção de dependências, refatoração de código. 
+
+Focus Timer foi inspirado no método Pomodoro para gerenciamento de tempo. A aplicação se inicia em 25 minutos, mas com os botões de mais/menos podemos aumentar ou reduzir esse tempo, também podendo pausar ou parar. Possuí 4 botões para ativar/desativar sons ambientes, sendo eles: floresta, chuva, cafeteria e lareira, também possui um botão para mudando de tema dark e light. 
+
+<br/>
+
+
 ### Tecnologias Utilizadas:
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
